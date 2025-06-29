@@ -8,14 +8,15 @@ on:
     branches:
       - main
     paths:
-      - "**.md"
-      - "**.svg"
-      - "**.png"
-      - "**.jpg"
-      - "**.jpeg"
-      # We need `pinion` to be able to run in CI/CD
-      # For now, we'll do it manually
-      # - "**.kicad_pcb"
+      - "packages/**/docs/**"
+      - "packages/tools/**"
+      - "packages/wiki/**"
+      - "packages/index.md"
+      - "scripts/buildNavbars.mts"
+      - "scripts/buildSidebars.mts"
+      - ".vitepress/**"
+      - ".github/workflows/docs.yml"
+      - "package.json" # In case we bump dependencies
 
 concurrency:
   group: pages
@@ -33,6 +34,11 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+          cache-dependency-path: ./pnpm-lock.yaml
+      - uses: actions/cache@v4
+        with:
+          path: .vitepress/cache
+          key: vitepress-cache
       - name: Install dependencies
         run: pnpm install
       - name: Build with VitePress
