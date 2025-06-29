@@ -1,5 +1,5 @@
-import { readdirSync, existsSync } from 'fs';
-import { join } from 'path';
+import { readdirSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 interface NavItem {
   text: string;

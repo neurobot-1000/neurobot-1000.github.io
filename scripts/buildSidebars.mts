@@ -109,43 +109,25 @@ function formatTitle(name: string): string {
     .replace(/\b\w/g, l => l.toUpperCase());
 }
 
-// Helper function to read meta.json files
-function readMetaJson(dirPath: string): { name?: string } | null {
-  try {
-    const metaPath = join(dirPath, 'meta.json');
-    if (!existsSync(metaPath)) {
-      return null;
-    }
-    const metaContent = readFileSync(metaPath, 'utf8');
-    return JSON.parse(metaContent);
-  } catch (error) {
-    console.warn(`Error reading meta.json at ${dirPath}:`, error);
-    return null;
-  }
-}
-
-// Helper function to extract title from frontmatter or fallback to filename
-function extractTitle(filePath: string, fileName: string): string {
+// Helper function to extract title and category from frontmatter
+function extractFrontmatter(filePath: string, fileName: string): { title: string; category?: string } {
   try {
     const content = readFileSync(filePath, 'utf8');
 
     // Parse frontmatter using gray-matter
     const parsed = matter(content);
 
-    // Return title from frontmatter if it exists
-    if (parsed.data?.title) {
-      return parsed.data.title;
-    }
+    const title = parsed.data?.title || formatTitle(fileName);
+    const category = parsed.data?.category || undefined;
 
-    // Fallback to formatted filename
-    return formatTitle(fileName);
+    return { title, category };
   } catch (error) {
     console.warn(`Error reading frontmatter from ${filePath}:`, error);
-    return formatTitle(fileName);
+    return { title: formatTitle(fileName) };
   }
 }
 
-// Wiki sidebar - organized by folders with meta.json
+// Wiki sidebar - organized by category frontmatter
 export function buildWikiSidebar(): SidebarItem[] {
   const wikiDir = join(process.cwd(), 'packages', 'wiki');
   const items: SidebarItem[] = [];
@@ -157,53 +139,66 @@ export function buildWikiSidebar(): SidebarItem[] {
   try {
     const entries = readdirSync(wikiDir, { withFileTypes: true });
 
-    // Sort directories first
-    entries.sort((a, b) => {
-      if (a.isDirectory() && !b.isDirectory()) return -1;
-      if (!a.isDirectory() && b.isDirectory()) return 1;
-      return a.name.localeCompare(b.name);
-    });
+    // Collect all pages with their frontmatter
+    const pages: { fileName: string; title: string; category?: string }[] = [];
 
     for (const entry of entries) {
-      if (entry.isDirectory()) {
-        const categoryPath = join(wikiDir, entry.name);
-        const meta = readMetaJson(categoryPath);
-        const categoryName = meta?.name || formatTitle(entry.name);
+      if (entry.isFile() && entry.name.endsWith('.md')) {
+        const fileName = entry.name.replace('.md', '');
+        const filePath = join(wikiDir, entry.name);
+        const { title, category } = extractFrontmatter(filePath, fileName);
 
-        // Get all markdown files in this category
-        const categoryItems: SidebarItem[] = [];
-
-        try {
-          const categoryEntries = readdirSync(categoryPath, { withFileTypes: true });
-
-          for (const categoryEntry of categoryEntries) {
-            if (categoryEntry.isFile() && categoryEntry.name.endsWith('.md')) {
-              const fileName = categoryEntry.name.replace('.md', '');
-              const filePath = join(categoryPath, categoryEntry.name);
-              const title = extractTitle(filePath, fileName);
-
-              categoryItems.push({
-                text: title,
-                link: `/wiki/${fileName}`
-              });
-            }
-          }
-
-          // Sort category items alphabetically
-          categoryItems.sort((a, b) => a.text.localeCompare(b.text));
-
-          if (categoryItems.length > 0) {
-            items.push({
-              text: categoryName,
-              items: categoryItems
-            });
-          }
-
-        } catch (error) {
-          console.warn(`Error reading wiki category ${entry.name}:`, error);
-        }
+        pages.push({ fileName, title, category });
       }
     }
+
+    // Group pages by category
+    const categoryGroups = new Map<string | undefined, typeof pages>();
+
+    for (const page of pages) {
+      const category = page.category;
+      const group = categoryGroups.get(category) ?? [];
+      if (group.length === 0) {
+        categoryGroups.set(category, group);
+      }
+      group.push(page);
+      categoryGroups.set(category, group);
+    }
+
+    // Add top-level pages first (category is undefined)
+    const topLevelPages = categoryGroups.get(undefined) || [];
+    for (const page of topLevelPages.sort((a, b) => a.title.localeCompare(b.title))) {
+      items.push({
+        text: page.title,
+        link: `/wiki/${page.fileName}`
+      });
+    }
+
+    // Add categorized pages
+    const sortedCategories = Array.from(categoryGroups.keys())
+      .filter((category): category is string => category !== undefined)
+      .sort((a, b) => (a || '').localeCompare(b || ''));
+
+    for (const category of sortedCategories) {
+      const categoryPages = categoryGroups.get(category) ?? [];
+
+      if (categoryPages.length > 0) {
+        const categoryItems: SidebarItem[] = [];
+
+        for (const page of categoryPages.sort((a, b) => a.title.localeCompare(b.title))) {
+          categoryItems.push({
+            text: page.title,
+            link: `/wiki/${page.fileName}`
+          });
+        }
+
+        items.push({
+          text: category,
+          items: categoryItems
+        });
+      }
+    }
+
   } catch (error) {
     console.warn('Error reading wiki directory:', error);
   }
