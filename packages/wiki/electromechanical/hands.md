@@ -1,3 +1,7 @@
+---
+title: Hands
+---
+
 ## Thumb
 
 Saddle joint and pulley system mimics thumb movement well:

@@ -1,3 +1,7 @@
+---
+title: Multi-material 3D printing
+---
+
 multi-material 3d printing can be especially useful for gears, where pitting is a huge factor which TPU could reduce, but bending the gear teeth is not desirable and stiffer materials would be better.
 
 ## multi-tool 3d printers:

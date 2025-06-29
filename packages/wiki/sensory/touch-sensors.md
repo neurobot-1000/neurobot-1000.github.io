@@ -1,3 +1,7 @@
+---
+title: Touch sensors
+---
+
 ## FEA Hinge
 
 High pressure sensors are quite expensive, and also unnecessary. Burying pressure sensors under layers of different materials like TPU and altering the shape over the pressure sensor will change the actual pressure the pressure sensor receives. Effectively it works like a lever: the edge around the sensor can act like the short end of the lever, and the area above the sensor can act as the long end, dividing the total force so we can use cheaper sensors.
@@ -10,6 +14,7 @@ The hinge and thus the sensor pressure range can be determined using Finite Elem
 
 In addition to the previous optimization, conductive foam can be cut into pieces and electrodes places on both sides for a cheap pressure sensor. Each foam sensor would need to be calibrated individually.
 For a grid to address each one, a transistor should be at each crossing in the grid, and when the anode and cathode are both active, the transistor activates, allowing the electrons to pass over only that section of foam. Otherwise, some multi-touches may not be distinguishable from single touch.
+
 - [Blog](http://iainmccurdy.org/diy/forcesensorfoam/forcesensorfoam.html)
 - [Instructables](https://www.instructables.com/Arduino-pressure-sensor-FSR-with-LCD-display/)
 - [Another instructables](https://www.instructables.com/DIY-Force-Sensitive-Resistor-FSR/)

@@ -5,6 +5,7 @@ catalog:
   '@biomejs/biome': ^2.0.6
   tsx: ^4.20.3
   '@types/node': ^24.0.7
+  gray-matter: ^4.0.3
 
 catalogMode: strict
 

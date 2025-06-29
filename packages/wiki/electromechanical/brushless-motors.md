@@ -1,3 +1,7 @@
+---
+title: Brushless motors
+---
+
 # Brushless motors
 
 Brushless motors, in bulk, can be as cheap as brushed motors now, including the microchips required to drive them.

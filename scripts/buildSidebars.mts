@@ -1,5 +1,7 @@
-import { readdirSync, existsSync } from 'fs';
-import { join } from 'path';
+// biome-ignore assist/source/organizeImports: <Why do we need to organize our imports if they're all at top level lmfao>
+import { readdirSync, existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import matter from 'gray-matter';
 
 interface SidebarItem {
   text: string;
@@ -107,6 +109,108 @@ function formatTitle(name: string): string {
     .replace(/\b\w/g, l => l.toUpperCase());
 }
 
+// Helper function to read meta.json files
+function readMetaJson(dirPath: string): { name?: string } | null {
+  try {
+    const metaPath = join(dirPath, 'meta.json');
+    if (!existsSync(metaPath)) {
+      return null;
+    }
+    const metaContent = readFileSync(metaPath, 'utf8');
+    return JSON.parse(metaContent);
+  } catch (error) {
+    console.warn(`Error reading meta.json at ${dirPath}:`, error);
+    return null;
+  }
+}
+
+// Helper function to extract title from frontmatter or fallback to filename
+function extractTitle(filePath: string, fileName: string): string {
+  try {
+    const content = readFileSync(filePath, 'utf8');
+
+    // Parse frontmatter using gray-matter
+    const parsed = matter(content);
+
+    // Return title from frontmatter if it exists
+    if (parsed.data?.title) {
+      return parsed.data.title;
+    }
+
+    // Fallback to formatted filename
+    return formatTitle(fileName);
+  } catch (error) {
+    console.warn(`Error reading frontmatter from ${filePath}:`, error);
+    return formatTitle(fileName);
+  }
+}
+
+// Wiki sidebar - organized by folders with meta.json
+export function buildWikiSidebar(): SidebarItem[] {
+  const wikiDir = join(process.cwd(), 'packages', 'wiki');
+  const items: SidebarItem[] = [];
+
+  if (!existsSync(wikiDir)) {
+    return items;
+  }
+
+  try {
+    const entries = readdirSync(wikiDir, { withFileTypes: true });
+
+    // Sort directories first
+    entries.sort((a, b) => {
+      if (a.isDirectory() && !b.isDirectory()) return -1;
+      if (!a.isDirectory() && b.isDirectory()) return 1;
+      return a.name.localeCompare(b.name);
+    });
+
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        const categoryPath = join(wikiDir, entry.name);
+        const meta = readMetaJson(categoryPath);
+        const categoryName = meta?.name || formatTitle(entry.name);
+
+        // Get all markdown files in this category
+        const categoryItems: SidebarItem[] = [];
+
+        try {
+          const categoryEntries = readdirSync(categoryPath, { withFileTypes: true });
+
+          for (const categoryEntry of categoryEntries) {
+            if (categoryEntry.isFile() && categoryEntry.name.endsWith('.md')) {
+              const fileName = categoryEntry.name.replace('.md', '');
+              const filePath = join(categoryPath, categoryEntry.name);
+              const title = extractTitle(filePath, fileName);
+
+              categoryItems.push({
+                text: title,
+                link: `/wiki/${fileName}`
+              });
+            }
+          }
+
+          // Sort category items alphabetically
+          categoryItems.sort((a, b) => a.text.localeCompare(b.text));
+
+          if (categoryItems.length > 0) {
+            items.push({
+              text: categoryName,
+              items: categoryItems
+            });
+          }
+
+        } catch (error) {
+          console.warn(`Error reading wiki category ${entry.name}:`, error);
+        }
+      }
+    }
+  } catch (error) {
+    console.warn('Error reading wiki directory:', error);
+  }
+
+  return items;
+}
+
 // Tools sidebar
 export function buildToolsSidebar(): SidebarItem[] {
   const toolsDir = join(process.cwd(), 'packages', 'tools');
@@ -130,38 +234,6 @@ export function buildToolsSidebar(): SidebarItem[] {
     }
   } catch (error) {
     console.warn('Error reading tools directory:', error);
-  }
-
-  return items;
-}
-
-// Wiki sidebar
-export function buildWikiSidebar(): SidebarItem[] {
-  const wikiDir = join(process.cwd(), 'packages', 'wiki');
-  const items: SidebarItem[] = [];
-
-  if (!existsSync(wikiDir)) {
-    return items;
-  }
-
-  try {
-    const entries = readdirSync(wikiDir, { withFileTypes: true });
-
-    for (const entry of entries) {
-      if (entry.isFile() && entry.name.endsWith('.md')) {
-        const fileName = entry.name.replace('.md', '');
-        const link = fileName === 'index'
-          ? '/wiki/'
-          : `/wiki/${fileName}`;
-
-        items.push({
-          text: formatTitle(fileName),
-          link
-        });
-      }
-    }
-  } catch (error) {
-    console.warn('Error reading wiki directory:', error);
   }
 
   return items;

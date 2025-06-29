@@ -1,3 +1,7 @@
+---
+title: Artificial Muscles
+---
+
 # Artificial muscles
 
 Currently, servos for robots are as expensive as they are weak and loud. There are many viable alternatives.

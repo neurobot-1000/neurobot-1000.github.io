@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import { buildBldcModelingSidebar, buildFreecadGearboxGeneratorSidebar, buildPcbDesignSidebar, buildToolsSidebar } from "../scripts/buildSidebars.mts";
+import { buildBldcModelingSidebar, buildFreecadGearboxGeneratorSidebar, buildPcbDesignSidebar, buildToolsSidebar, buildWikiSidebar } from "../scripts/buildSidebars.mts";
 import { buildPackagesNavbar, buildPcbDesignNavbar, buildToolsNavbar } from "../scripts/buildNavbars.mts";
 
 // https://vitepress.dev/reference/site-config
@@ -9,6 +9,8 @@ export default defineConfig({
   srcDir: "packages",
   rewrites: {
     "pcb-design/:board/docs/:slug": "boards/:board/:slug",
+    "wiki/:category/:slug": "wiki/:slug",
+    "wiki/": "wiki/",
     "tools/:slug": "tools/:slug",
     "bldc-modeling/docs/:slug": "bldc/:slug",
     ":pkg/docs/:slug": ":pkg/:slug",
@@ -26,40 +28,7 @@ export default defineConfig({
 
     sidebar: {
       "/tools": buildToolsSidebar(),
-      "/wiki": [
-        {
-          text: "General",
-          items: [
-            { text: "Overview", link: "/wiki" },
-            { text: "Safety Training", link: "/wiki/safety-training" },
-          ],
-        },
-        {
-          text: "Electro-Mechanical System",
-          items: [
-            { text: "Artificial Muscles", link: "/wiki/artificial-muscles" },
-            { text: "Hands", link: "/wiki/hands" },
-            { text: "Brushless Motors", link: "/wiki/brushless-motors" },
-            { text: "Energy Storage", link: "/wiki/energy-storage" },
-          ],
-        },
-        {
-          text: "Sensory Input",
-          items: [
-            { text: "Eyes", link: "/wiki/eyes" },
-            { text: "Touch", link: "/wiki/touch-sensors" },
-          ],
-        },
-        {
-          text: "Manufacturing",
-          items: [
-            {
-              text: "Multi-material 3D printing",
-              link: "/wiki/multi-material-3d-printing",
-            },
-          ],
-        },
-      ],
+      "/wiki": buildWikiSidebar(),
       "/boards": buildPcbDesignSidebar(),
       "/freecad-gearbox-generator": buildFreecadGearboxGeneratorSidebar(),
       "/bldc": buildBldcModelingSidebar(),
