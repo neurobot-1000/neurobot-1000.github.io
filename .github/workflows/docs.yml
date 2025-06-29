@@ -45,7 +45,7 @@ jobs:
         run: pnpm build:docs
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: .vitepress/dist
 
   deploy:
     runs-on: ubuntu-22.04
