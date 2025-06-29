@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import { buildFreecadGearboxGeneratorSidebar, buildPcbDesignSidebar, buildToolsSidebar } from "../scripts/buildSidebars.mts";
+import { buildBldcModelingSidebar, buildFreecadGearboxGeneratorSidebar, buildPcbDesignSidebar, buildToolsSidebar } from "../scripts/buildSidebars.mts";
 import { buildPackagesNavbar, buildPcbDesignNavbar, buildToolsNavbar } from "../scripts/buildNavbars.mts";
 
 // https://vitepress.dev/reference/site-config
@@ -21,6 +21,7 @@ export default defineConfig({
       { text: "Tools", items: buildToolsNavbar() },
       { text: "Packages", items: buildPackagesNavbar() },
       { text: "Boards", items: buildPcbDesignNavbar() },
+      { text: "BLDC", link: "/bldc" },
       { text: "Contributing", link: "/contributing" },
     ],
 
@@ -61,7 +62,8 @@ export default defineConfig({
         },
       ],
       "/boards": buildPcbDesignSidebar(),
-      "/freecad-gearbox-generator": buildFreecadGearboxGeneratorSidebar()
+      "/freecad-gearbox-generator": buildFreecadGearboxGeneratorSidebar(),
+      "/bldc": buildBldcModelingSidebar(),
     },
 
     socialLinks: [
