@@ -10,7 +10,7 @@ export default defineConfig({
   rewrites: {
     "pcb-design/:board/docs/:slug": "boards/:board/:slug",
     "tools/:slug": "tools/:slug",
-    "bldc-modeling/:slug": "bldc/:slug",
+    "bldc-modeling/docs/:slug": "bldc/:slug",
     ":pkg/docs/:slug": ":pkg/:slug",
   },
   themeConfig: {
