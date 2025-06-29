@@ -1,3 +1,5 @@
+name: Documentation build CI
+
 # Only update the site when push to main AND when any documentation MAY change
 on:
   # Also allow manual deployment
