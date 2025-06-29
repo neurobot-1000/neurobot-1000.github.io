@@ -1,0 +1,49 @@
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# KiCAD
+*-backups
+fp-info-cache
+
+# These files better be stored/generated elsewhere
+# Ideally, media files should also be stored elsewhere when possible
+.zip
+.pdf
+
+# Common directory
+node_modules
+dist
+dist-ssr
+cache
+build
+.venv
+.DS_Store
+coverage
+*.local
+
+# Common file
+.env
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Wrangler files
+.wrangler
+.dev.vars*
+
+# Others that may be defined
+/cypress/videos/
+/cypress/screenshots/
+
+*.tsbuildinfo

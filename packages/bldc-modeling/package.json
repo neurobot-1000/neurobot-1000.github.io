@@ -1,0 +1,23 @@
+{
+  "name": "@neurobot-1000/bldc-modeling",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A python script to calculate/simulate a BLDC performance from the provided parameters.",
+  "homepage": "https://neurobot-1000.github.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neurobot-1000/neurobot-1000.github.io.git"
+  },
+  "author": {
+    "name": "Computed Functions",
+    "email": "215638926+computed-fn@users.noreply.github.com"
+  },
+  "contributors": [
+    {
+      "name": "Computed Functions",
+      "email": "215638926+computed-fn@users.noreply.github.com"
+    }
+  ],
+  "license": "Unknown",
+  "config": {}
+}

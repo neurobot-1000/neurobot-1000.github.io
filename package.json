@@ -1,0 +1,43 @@
+{
+	"name": "@neurobot-1000/web",
+	"private": true,
+	"version": "0.0.1",
+	"description": "A compilation of useful work for Neurobot-1000 development.",
+	"homepage": "https://neurobot-1000.github.io",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/neurobot-1000/neurobot-1000.github.io.git"
+	},
+	"author": {
+		"name": "Computed Functions",
+		"email": "215638926+computed-fn@users.noreply.github.com",
+		"url": "https://github.com/computed-fn"
+	},
+	"contributors": [
+		{
+			"name": "Computed Functions",
+			"email": "215638926+computed-fn@users.noreply.github.com",
+			"url": "https://github.com/computed-fn"
+		}
+	],
+	"license": "(BSD-3-Clause-Clear AND CC-BY-4.0)",
+	"packageManager": "pnpm@10.12.1",
+	"scripts": {
+		"lint": "biome check --write",
+		"gen:packageInfo": "tsx ./scripts/gen-package-info.ts",
+		"dev:docs": "vitepress dev .",
+		"build:all": "pnpm run \"/build:[^(all)].*/\"",
+		"build:docs": "vitepress build .",
+		"preview:docs": "vitepress preview ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "catalog:",
+		"@types/node": "catalog:",
+		"function-plot": "^1.25.1",
+		"markdown-it-mathjax3": "^4.3.2",
+		"smol-toml": "^1.4.0",
+		"tsx": "catalog:",
+		"vitepress": "^1.6.3",
+		"vue": "^3.5.17"
+	}
+}

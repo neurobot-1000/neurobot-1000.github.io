@@ -1,0 +1,13 @@
+[project]
+name = "freecad-gearbox-generator"
+version = "0.0.1"
+description = "A FreeCAD plugins to generate a complete two-stage cycloid gearbox assembly from the parameters."
+authors = [
+  { name = "Computed Functions", email = "215638926+computed-fn@users.noreply.github.com" }
+]
+license = { file = "LICENSE.BSD-3-Clause-Clear" }
+requires-python = ">=3.13"
+readme = "README.md"
+dependencies = []
+
+[tool.neurobot]

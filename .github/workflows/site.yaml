@@ -1,0 +1,54 @@
+# Only update the site when push to main AND when any documentation MAY change
+on:
+  # Also allow manual deployment
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.md"
+      - "**.svg"
+      - "**.png"
+      - "**.jpg"
+      - "**.jpeg"
+      # We need `pinion` to be able to run in CI/CD
+      # For now, we'll do it manually
+      # - "**.kicad_pcb"
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-site:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build with VitePress
+        run: pnpm build:docs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    runs-on: ubuntu-22.04
+    needs: build-site
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

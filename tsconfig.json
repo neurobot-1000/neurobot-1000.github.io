@@ -1,0 +1,12 @@
+{
+  "include": [
+    "packages/**/*.ts",
+    "packages/**/*.vue",
+    "packages/**/*.md"
+  ],
+  "vueCompilerOptions": {
+    "vitePressExtensions": [
+      ".md"
+    ]
+  }
+}

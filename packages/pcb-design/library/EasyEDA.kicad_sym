@@ -1,0 +1,736 @@
+                    (kicad_symbol_lib
+                    (version 20211014)
+                    (generator https://github.com/uPesy/easyeda2kicad.py)
+                   
+  (symbol "HYG025N06LS1C2"
+    (in_bom yes)
+    (on_board yes)
+    (property
+      "Reference"
+      "Q"
+      (id 0)
+      (at 0 10.16 0)
+      (effects (font (size 1.27 1.27) ) )
+    )
+    (property
+      "Value"
+      "HYG025N06LS1C2"
+      (id 1)
+      (at 0 -10.16 0)
+      (effects (font (size 1.27 1.27) ) )
+    )
+    (property
+      "Footprint"
+      "EasyEDA:DFN-8_L5.9-W5.2-P1.27-LS6.2-BL"
+      (id 2)
+      (at 0 -12.70 0)
+      (effects (font (size 1.27 1.27) ) hide)
+    )
+    (property
+      "LCSC Part"
+      "C2827231"
+      (id 5)
+      (at 0 -15.24 0)
+      (effects (font (size 1.27 1.27) ) hide)
+    )
+    (symbol "HYG025N06LS1C2_0_1"
+      (rectangle
+        (start -5.08 7.62)
+        (end 5.08 -7.62)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type background))
+      )
+      (circle
+        (center -3.81 6.35)
+        (radius 0.38)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type none))
+      )
+      (pin unspecified line
+        (at 7.62 5.08 180)
+        (length 2.54)
+        (name "D" (effects (font (size 1.27 1.27))))
+        (number "9" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 7.62 2.54 180)
+        (length 2.54)
+        (name "D" (effects (font (size 1.27 1.27))))
+        (number "8" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 7.62 -0.00 180)
+        (length 2.54)
+        (name "D" (effects (font (size 1.27 1.27))))
+        (number "7" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 7.62 -2.54 180)
+        (length 2.54)
+        (name "D" (effects (font (size 1.27 1.27))))
+        (number "6" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 7.62 -5.08 180)
+        (length 2.54)
+        (name "D" (effects (font (size 1.27 1.27))))
+        (number "5" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -7.62 -5.08 0)
+        (length 2.54)
+        (name "G" (effects (font (size 1.27 1.27))))
+        (number "4" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -7.62 -2.54 0)
+        (length 2.54)
+        (name "S" (effects (font (size 1.27 1.27))))
+        (number "3" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -7.62 -0.00 0)
+        (length 2.54)
+        (name "S" (effects (font (size 1.27 1.27))))
+        (number "2" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -7.62 2.54 0)
+        (length 2.54)
+        (name "S" (effects (font (size 1.27 1.27))))
+        (number "1" (effects (font (size 1.27 1.27))))
+      )
+    )
+  )
+  (symbol "STSPIN32G4_C7434864"
+    (in_bom yes)
+    (on_board yes)
+    (property
+      "Reference"
+      "U"
+      (id 0)
+      (at 0 45.72 0)
+      (effects (font (size 1.27 1.27) ) )
+    )
+    (property
+      "Value"
+      "STSPIN32G4_C7434864"
+      (id 1)
+      (at 0 -45.72 0)
+      (effects (font (size 1.27 1.27) ) )
+    )
+    (property
+      "Footprint"
+      "EasyEDA:VFQFPN-64_L9.0-W9.0-P0.50-TL-EP4.0"
+      (id 2)
+      (at 0 -48.26 0)
+      (effects (font (size 1.27 1.27) ) hide)
+    )
+    (property
+      "LCSC Part"
+      "C7434864"
+      (id 5)
+      (at 0 -50.80 0)
+      (effects (font (size 1.27 1.27) ) hide)
+    )
+    (symbol "STSPIN32G4_C7434864_0_1"
+      (rectangle
+        (start -15.24 43.18)
+        (end 15.24 -43.18)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type background))
+      )
+      (circle
+        (center -13.97 39.37)
+        (radius 0.38)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type none))
+      )
+      (pin unspecified line
+        (at -17.78 38.10 0)
+        (length 2.54)
+        (name "REG3V3/VDD" (effects (font (size 1.27 1.27))))
+        (number "1" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 35.56 0)
+        (length 2.54)
+        (name "VBAT" (effects (font (size 1.27 1.27))))
+        (number "2" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 33.02 0)
+        (length 2.54)
+        (name "PC13" (effects (font (size 1.27 1.27))))
+        (number "3" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 30.48 0)
+        (length 2.54)
+        (name "PC14" (effects (font (size 1.27 1.27))))
+        (number "4" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 27.94 0)
+        (length 2.54)
+        (name "PC15" (effects (font (size 1.27 1.27))))
+        (number "5" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 25.40 0)
+        (length 2.54)
+        (name "PF0" (effects (font (size 1.27 1.27))))
+        (number "6" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 22.86 0)
+        (length 2.54)
+        (name "PF1" (effects (font (size 1.27 1.27))))
+        (number "7" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 20.32 0)
+        (length 2.54)
+        (name "PG10" (effects (font (size 1.27 1.27))))
+        (number "8" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 17.78 0)
+        (length 2.54)
+        (name "PC0" (effects (font (size 1.27 1.27))))
+        (number "9" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 15.24 0)
+        (length 2.54)
+        (name "PC1" (effects (font (size 1.27 1.27))))
+        (number "10" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 12.70 0)
+        (length 2.54)
+        (name "PC2" (effects (font (size 1.27 1.27))))
+        (number "11" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 10.16 0)
+        (length 2.54)
+        (name "PC3" (effects (font (size 1.27 1.27))))
+        (number "12" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 7.62 0)
+        (length 2.54)
+        (name "PA0" (effects (font (size 1.27 1.27))))
+        (number "13" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 5.08 0)
+        (length 2.54)
+        (name "PA1" (effects (font (size 1.27 1.27))))
+        (number "14" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 2.54 0)
+        (length 2.54)
+        (name "PA2" (effects (font (size 1.27 1.27))))
+        (number "15" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -0.00 0)
+        (length 2.54)
+        (name "PA3" (effects (font (size 1.27 1.27))))
+        (number "16" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -2.54 0)
+        (length 2.54)
+        (name "PA4" (effects (font (size 1.27 1.27))))
+        (number "17" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -5.08 0)
+        (length 2.54)
+        (name "PA5" (effects (font (size 1.27 1.27))))
+        (number "18" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -7.62 0)
+        (length 2.54)
+        (name "PA6" (effects (font (size 1.27 1.27))))
+        (number "19" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -10.16 0)
+        (length 2.54)
+        (name "PA7" (effects (font (size 1.27 1.27))))
+        (number "20" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -12.70 0)
+        (length 2.54)
+        (name "PC4" (effects (font (size 1.27 1.27))))
+        (number "21" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -15.24 0)
+        (length 2.54)
+        (name "PC5" (effects (font (size 1.27 1.27))))
+        (number "22" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -17.78 0)
+        (length 2.54)
+        (name "PB0" (effects (font (size 1.27 1.27))))
+        (number "23" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -20.32 0)
+        (length 2.54)
+        (name "PB1" (effects (font (size 1.27 1.27))))
+        (number "24" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -22.86 0)
+        (length 2.54)
+        (name "PB2" (effects (font (size 1.27 1.27))))
+        (number "25" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -25.40 0)
+        (length 2.54)
+        (name "VREF+" (effects (font (size 1.27 1.27))))
+        (number "26" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -27.94 0)
+        (length 2.54)
+        (name "VDDA" (effects (font (size 1.27 1.27))))
+        (number "27" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -30.48 0)
+        (length 2.54)
+        (name "PB10" (effects (font (size 1.27 1.27))))
+        (number "28" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -33.02 0)
+        (length 2.54)
+        (name "GLS1" (effects (font (size 1.27 1.27))))
+        (number "29" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -35.56 0)
+        (length 2.54)
+        (name "GLS2" (effects (font (size 1.27 1.27))))
+        (number "30" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -38.10 0)
+        (length 2.54)
+        (name "GLS3" (effects (font (size 1.27 1.27))))
+        (number "31" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -17.78 -40.64 0)
+        (length 2.54)
+        (name "PGND" (effects (font (size 1.27 1.27))))
+        (number "32" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -40.64 180)
+        (length 2.54)
+        (name "NC" (effects (font (size 1.27 1.27))))
+        (number "33" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -38.10 180)
+        (length 2.54)
+        (name "NC" (effects (font (size 1.27 1.27))))
+        (number "34" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -35.56 180)
+        (length 2.54)
+        (name "BOOT3" (effects (font (size 1.27 1.27))))
+        (number "35" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -33.02 180)
+        (length 2.54)
+        (name "OUT3" (effects (font (size 1.27 1.27))))
+        (number "36" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -30.48 180)
+        (length 2.54)
+        (name "GHS3" (effects (font (size 1.27 1.27))))
+        (number "37" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -27.94 180)
+        (length 2.54)
+        (name "BOOT2" (effects (font (size 1.27 1.27))))
+        (number "38" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -25.40 180)
+        (length 2.54)
+        (name "OUT2" (effects (font (size 1.27 1.27))))
+        (number "39" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -22.86 180)
+        (length 2.54)
+        (name "GHS2" (effects (font (size 1.27 1.27))))
+        (number "40" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -20.32 180)
+        (length 2.54)
+        (name "BOOT1" (effects (font (size 1.27 1.27))))
+        (number "41" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -17.78 180)
+        (length 2.54)
+        (name "OUT1" (effects (font (size 1.27 1.27))))
+        (number "42" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -15.24 180)
+        (length 2.54)
+        (name "GHS1" (effects (font (size 1.27 1.27))))
+        (number "43" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -12.70 180)
+        (length 2.54)
+        (name "PA8" (effects (font (size 1.27 1.27))))
+        (number "44" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -10.16 180)
+        (length 2.54)
+        (name "PA9" (effects (font (size 1.27 1.27))))
+        (number "45" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -7.62 180)
+        (length 2.54)
+        (name "PA10" (effects (font (size 1.27 1.27))))
+        (number "46" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -5.08 180)
+        (length 2.54)
+        (name "PA11" (effects (font (size 1.27 1.27))))
+        (number "47" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -2.54 180)
+        (length 2.54)
+        (name "PA12" (effects (font (size 1.27 1.27))))
+        (number "48" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 -0.00 180)
+        (length 2.54)
+        (name "PA13" (effects (font (size 1.27 1.27))))
+        (number "49" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 2.54 180)
+        (length 2.54)
+        (name "PA14" (effects (font (size 1.27 1.27))))
+        (number "50" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 5.08 180)
+        (length 2.54)
+        (name "PA15" (effects (font (size 1.27 1.27))))
+        (number "51" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 7.62 180)
+        (length 2.54)
+        (name "SCREF" (effects (font (size 1.27 1.27))))
+        (number "52" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 10.16 180)
+        (length 2.54)
+        (name "PD2" (effects (font (size 1.27 1.27))))
+        (number "53" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 12.70 180)
+        (length 2.54)
+        (name "PB3" (effects (font (size 1.27 1.27))))
+        (number "54" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 15.24 180)
+        (length 2.54)
+        (name "PB4" (effects (font (size 1.27 1.27))))
+        (number "55" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 17.78 180)
+        (length 2.54)
+        (name "PB5" (effects (font (size 1.27 1.27))))
+        (number "56" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 20.32 180)
+        (length 2.54)
+        (name "PB6" (effects (font (size 1.27 1.27))))
+        (number "57" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 22.86 180)
+        (length 2.54)
+        (name "PB7" (effects (font (size 1.27 1.27))))
+        (number "58" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 25.40 180)
+        (length 2.54)
+        (name "PB8" (effects (font (size 1.27 1.27))))
+        (number "59" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 27.94 180)
+        (length 2.54)
+        (name "PB9" (effects (font (size 1.27 1.27))))
+        (number "60" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 30.48 180)
+        (length 2.54)
+        (name "VM" (effects (font (size 1.27 1.27))))
+        (number "61" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 33.02 180)
+        (length 2.54)
+        (name "SW" (effects (font (size 1.27 1.27))))
+        (number "62" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 35.56 180)
+        (length 2.54)
+        (name "VCC" (effects (font (size 1.27 1.27))))
+        (number "63" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 38.10 180)
+        (length 2.54)
+        (name "REGIN" (effects (font (size 1.27 1.27))))
+        (number "64" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 17.78 40.64 180)
+        (length 2.54)
+        (name "VSS" (effects (font (size 1.27 1.27))))
+        (number "65" (effects (font (size 1.27 1.27))))
+      )
+    )
+  )
+  (symbol "TJA1042T_3_1J"
+    (in_bom yes)
+    (on_board yes)
+    (property
+      "Reference"
+      "U"
+      (id 0)
+      (at 0 8.89 0)
+      (effects (font (size 1.27 1.27) ) )
+    )
+    (property
+      "Value"
+      "TJA1042T/3/1J"
+      (id 1)
+      (at 0 -8.89 0)
+      (effects (font (size 1.27 1.27) ) )
+    )
+    (property
+      "Footprint"
+      "EasyEDA:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
+      (id 2)
+      (at 0 -11.43 0)
+      (effects (font (size 1.27 1.27) ) hide)
+    )
+    (property
+      "Datasheet"
+      "https://lcsc.com/product-detail/Others_NXP_TJA1042T-3-1J_TJA1042T-3-1J_C132227.html"
+      (id 3)
+      (at 0 -13.97 0)
+      (effects (font (size 1.27 1.27) ) hide)
+    )
+    (property
+      "LCSC Part"
+      "C132227"
+      (id 5)
+      (at 0 -16.51 0)
+      (effects (font (size 1.27 1.27) ) hide)
+    )
+    (symbol "TJA1042T_3_1J_0_1"
+      (rectangle
+        (start -10.16 6.35)
+        (end 10.16 -6.35)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type background))
+      )
+      (circle
+        (center -8.89 5.08)
+        (radius 0.38)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type none))
+      )
+      (pin unspecified line
+        (at -12.70 3.81 0)
+        (length 2.54)
+        (name "TXD" (effects (font (size 1.27 1.27))))
+        (number "1" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -12.70 1.27 0)
+        (length 2.54)
+        (name "GND" (effects (font (size 1.27 1.27))))
+        (number "2" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -12.70 -1.27 0)
+        (length 2.54)
+        (name "VCC" (effects (font (size 1.27 1.27))))
+        (number "3" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -12.70 -3.81 0)
+        (length 2.54)
+        (name "RXD" (effects (font (size 1.27 1.27))))
+        (number "4" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 12.70 -3.81 180)
+        (length 2.54)
+        (name "VIO" (effects (font (size 1.27 1.27))))
+        (number "5" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 12.70 -1.27 180)
+        (length 2.54)
+        (name "CANL" (effects (font (size 1.27 1.27))))
+        (number "6" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 12.70 1.27 180)
+        (length 2.54)
+        (name "CANH" (effects (font (size 1.27 1.27))))
+        (number "7" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 12.70 3.81 180)
+        (length 2.54)
+        (name "STB" (effects (font (size 1.27 1.27))))
+        (number "8" (effects (font (size 1.27 1.27))))
+      )
+    )
+  )
+  (symbol "TCAN3413DR"
+    (in_bom yes)
+    (on_board yes)
+    (property
+      "Reference"
+      "U"
+      (id 0)
+      (at 0 13.97 0)
+      (effects (font (size 1.27 1.27) ) )
+    )
+    (property
+      "Value"
+      "TCAN3413DR"
+      (id 1)
+      (at 0 -13.97 0)
+      (effects (font (size 1.27 1.27) ) )
+    )
+    (property
+      "Footprint"
+      "EasyEDA:SOP-8_L4.9-W3.9-P1.27-LS6.0-BL-1"
+      (id 2)
+      (at 0 -16.51 0)
+      (effects (font (size 1.27 1.27) ) hide)
+    )
+    (property
+      "LCSC Part"
+      "C22433320"
+      (id 5)
+      (at 0 -19.05 0)
+      (effects (font (size 1.27 1.27) ) hide)
+    )
+    (symbol "TCAN3413DR_0_1"
+      (rectangle
+        (start -7.62 11.43)
+        (end 7.62 -11.43)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type background))
+      )
+      (circle
+        (center -6.35 10.16)
+        (radius 0.38)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type none))
+      )
+      (pin unspecified line
+        (at -10.16 8.89 0)
+        (length 2.54)
+        (name "CANH" (effects (font (size 1.27 1.27))))
+        (number "7" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -10.16 6.35 0)
+        (length 2.54)
+        (name "CANL" (effects (font (size 1.27 1.27))))
+        (number "6" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -10.16 -1.27 0)
+        (length 2.54)
+        (name "RXD" (effects (font (size 1.27 1.27))))
+        (number "4" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -10.16 -3.81 0)
+        (length 2.54)
+        (name "STB" (effects (font (size 1.27 1.27))))
+        (number "8" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -10.16 -6.35 0)
+        (length 2.54)
+        (name "TXD" (effects (font (size 1.27 1.27))))
+        (number "1" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at -10.16 -8.89 0)
+        (length 2.54)
+        (name "VIO" (effects (font (size 1.27 1.27))))
+        (number "5" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 10.16 -8.89 180)
+        (length 2.54)
+        (name "GND" (effects (font (size 1.27 1.27))))
+        (number "2" (effects (font (size 1.27 1.27))))
+      )
+      (pin unspecified line
+        (at 10.16 8.89 180)
+        (length 2.54)
+        (name "VCC" (effects (font (size 1.27 1.27))))
+        (number "3" (effects (font (size 1.27 1.27))))
+      )
+    )
+  )
+)
