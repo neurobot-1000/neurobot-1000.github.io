@@ -16,7 +16,6 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
       { text: "Wiki", link: "/wiki" },
       { text: "Tools", items: buildToolsNavbar() },
       { text: "Packages", items: buildPackagesNavbar() },
