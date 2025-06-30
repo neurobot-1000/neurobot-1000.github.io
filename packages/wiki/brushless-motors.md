@@ -1,5 +1,6 @@
 ---
 title: Brushless motors
+category: Electro-mechanical system
 ---
 
 # Brushless motors

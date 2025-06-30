@@ -1,10 +1,12 @@
 ---
 title: Touch sensors
+category: Sensory input
 ---
 
 ## FEA Hinge
 
 High pressure sensors are quite expensive, and also unnecessary. Burying pressure sensors under layers of different materials like TPU and altering the shape over the pressure sensor will change the actual pressure the pressure sensor receives. Effectively it works like a lever: the edge around the sensor can act like the short end of the lever, and the area above the sensor can act as the long end, dividing the total force so we can use cheaper sensors.
+
 - [amazon 20g to 2kg sensors, 3$ per sensor](https://www.amazon.com/Pressure-Sensitivity-Sensitive-Industrial-Measurement/dp/B0CZ6L5NMM?th=1)
 - [sparkfun 200kg force sensor 64$ per sensor](https://www.sparkfun.com/load-cell-200kg-s-type-tas501.html)
 

@@ -1,5 +1,6 @@
 ---
 title: Eyes
+category: Sensory input
 ---
 
 # Eyes

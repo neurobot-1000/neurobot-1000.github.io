@@ -1,5 +1,6 @@
 ---
 title: Energy Storage
+category: Electro-mechanical system
 ---
 
 # Energy storage

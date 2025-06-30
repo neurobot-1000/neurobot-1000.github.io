@@ -1,3 +1,4 @@
+/** biome-ignore-all assist/source/organizeImports: <bro why> */
 import { readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
